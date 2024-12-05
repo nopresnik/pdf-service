@@ -1,0 +1,20 @@
+service: pdf-service
+
+provider:
+  name: aws
+  runtime: nodejs22.x
+  region: ap-southeast-2
+  timeout: 10
+  stackTags:
+    Project: 'pdf-service'
+
+functions:
+  hello:
+    handler: src/handler.generatePDF
+    events:
+      - httpApi:
+          path: /
+          method: get
+
+plugins:
+  - serverless-offline
