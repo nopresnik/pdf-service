@@ -27,7 +27,7 @@ package:
 
 functions:
   hello:
-    handler: src/handler.generatePDF
+    handler: src/handlerNew.generatePDF
     memorySize: 2048
     events:
       - httpApi:
